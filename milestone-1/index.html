@@ -10,10 +10,126 @@
 			integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 			crossorigin="anonymous"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+			integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 		<title>Boolzapp</title>
 	</head>
 	<body>
+		<!-- #site_header -->
+		<header id="site_header"></header>
+		<!-- /#site_header -->
+
+		<!-- #site_main -->
+		<main id="site_main"></main>
+		<!-- /#site_main -->
+
+		<!-- .container -->
+		<div class="container">
+			<!-- .containerHeader -->
+			<div class="containerHeader h-auto d-flex justify-content-center">
+				<!-- .containerHeaderLeft -->
+				<div class="containerHeaderLeft border-end">
+					<div class="row row-cols-6 ms-1 me-1 gx-0">
+						<div class="col-2">
+							<img
+								class="w-75 rounded-circle"
+								src="./assets/img/avatar_io.jpg"
+								alt="immagine avatar di una ragazza"
+							/>
+						</div>
+						<div class="col-2">
+							<h5>Nome utente</h5>
+						</div>
+						<div class="col-5"></div>
+						<div class="col-1">
+							<i class="fas fa-circle-notch"></i>
+						</div>
+						<div class="col-1">
+							<i class="fas fa-comment-alt"></i>
+						</div>
+						<div class="col-1">
+							<i class="fas fa-ellipsis-v"></i>
+						</div>
+					</div>
+				</div>
+				<!-- /.containerHeaderLeft -->
+
+				<!-- .containerHeaderRight -->
+				<div class="containerHeaderRight">
+					<div class="row row-cols-6 ms-1 me-1 gx-0">
+						<div class="col-1 pe-1">
+							<img
+								class="w-100 rounded-circle"
+								src="./assets/img/avatar_1.jpg"
+								alt="immagine avatar di un ragazzo di nome Michele"
+							/>
+						</div>
+						<div class="col-6">
+							<h6>Michele</h6>
+							<p class="paragraph">
+								Ultimo accesso oggi alle 18 12 2020 <br />08:56:37
+							</p>
+						</div>
+						<div class="col-2"></div>
+						<div class="col-1">
+							<i class="fas fa-search"></i>
+						</div>
+						<div class="col-1">
+							<!-- <i class="fa fa-paperclip" aria-hidden="true"></i> -->
+							<i class="fas fa-paperclip"></i>
+						</div>
+						<div class="col-1">
+							<i class="fas fa-ellipsis-v"></i>
+						</div>
+					</div>
+				</div>
+				<!-- /.containerHeaderRight -->
+			</div>
+			<!-- /.containerHeader -->
+
+			<!-- .containerMain -->
+			<div class="containerMain h-auto d-flex justify-content-center">
+				<!-- .containerMainLeft -->
+				<div class="containerMainLeft">
+					<div class="row row-cols-1 flex-column">
+						<div class="col-12 h-auto d-flex">
+							<span class="rounded-circle border-1 bg-light p-3">
+								<i class="fas fa-bell-slash"></i>
+							</span>
+							<div class="title">
+								<h6>Ricevi notifiche di nuovi messaggi</h6>
+								<h6 class="text-decoration-underline">Attiva notifiche desktop</h6>
+							</div>
+						</div>
+						<div class="col-12"></div>
+						<div class="col-12"></div>
+						<div class="col-12"></div>
+						<div class="col-12"></div>
+						<div class="col-12"></div>
+					</div>
+				</div>
+				<!-- /.containerMainLeft -->
+
+				<!-- .containerMainRight -->
+				<div class="containerMainRight">
+					<img
+						class="w-100"
+						src="./assets/img/mine.jpg"
+						alt="immagine di sfondo della chat di WhatsApp"
+					/>
+				</div>
+				<!-- /.containerMainRight -->
+			</div>
+			<!-- /.containerMain -->
+		</div>
+		<!-- /.container -->
+
 		<!-- script_vuejs_javascript -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 		<script src="./assets/js/main.js"></script>

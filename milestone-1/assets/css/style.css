@@ -4,106 +4,193 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+body {
+	height: 100vh;
+	background-image: linear-gradient(
+		to bottom,
+		var(--bodyHeader_backgroundColor) 0px,
+		var(--bodyHeader_backgroundColor) 116px,
+		var(--bodyMain_backgroundColor) 116px,
+		var(--bodyMain_backgroundColor) 100%
+	);
+}
 /* /commonGeneralRules */
 
 /* utility */
 :root {
-	--header_backgroundColor: #009688;
-	--main_backgroundColor: #dadbd4;
-	--mainContainerHeader_backgroundColor: #eaeaea;
-	--mainContainerMainLeft_backgroundColor: #8edafc;
-}
-
-.row > .col-1,
-.col-2 {
-	line-height: 90px;
+	--bodyHeader_backgroundColor: #009688;
+	--bodyMain_backgroundColor: #dadbd4;
+	--contentHeader_backgroundColor: #eaeaea;
+	--sidebarMain_backgroundColor: #8edafc;
+	--sidebarMainTwo_backgroundColor: #fafafa;
+	--gray_color: gray;
+	--contentFooter_backgroundColor: #f3eeea;
 }
 /* /utility */
-
-/**********  
-#SITE_HEADER
-**********/
-
-#site_header {
-	height: 100px;
-	background-color: var(--header_backgroundColor);
-}
-
-/**********  
-/#SITE_HEADER
-**********/
-
-/**********  
-#SITE_MAIN
-**********/
-
-#site_main {
-	height: auto;
-	background-color: var(--main_backgroundColor);
-}
-
-/**********  
-/#SITE_MAIN
-**********/
 
 /**********  
 .CONTAINER
 **********/
 
-.containerHeaderLeft,
-.containerHeaderRight {
-	height: 90px;
-	background-color: var(--mainContainerHeader_backgroundColor);
+.sidebarHeader,
+.contentHeader {
+	height: 100px;
+	background-color: var(--contentHeader_backgroundColor);
 }
 
-.col {
-	padding: 0 0.5rem!important;
+.container i {
+	color: var(--gray_color);
 }
 
-.containerHeaderLeft,
-.containerMainLeft {
+/* .sidebar */
+.sidebar {
 	width: 40%;
 }
 
-/* .containerHeaderLeft */
-/* /.containerHeaderLeft */
-
-/* .containerHeaderRight */
-.containerHeaderRight,
-.containerMainRight {
-	width: 60%;
+/* .sidebarHeader */
+#imgUser {
+	width: 65px;
+	height: 65px;
 }
 
-.paragraph {
-	font-size: 13px;
-}
-/* /.containerHeaderRight */
-
-/* .containerMain */
-/* .containerMainLeft */
-.containerMainLeft > .col {
-	height: calc(100% / 6);
+#rowNameUser {
+	margin: 0 0.5rem;
+	line-height: 90px;
 }
 
-.containerMainLeft > .row:first-child {
-	background-color: var(--mainContainerMainLeft_backgroundColor);
+.icons i {
+	padding: 0 1rem;
+	font-size: 25px;
 }
 
-.containerMainLeft i {
+.icons i:hover {
+	cursor: pointer;
+}
+/* /.sidebarHeader */
+
+/* .sidebarMain */
+#notifications {
+	height: 80px;
+	background-color: var(--sidebarMain_backgroundColor);
+}
+
+#notifications:first-child span {
+	margin: 0.5rem 1rem;
+}
+
+.text {
+	margin: 1rem 0;
+}
+
+.text h6:nth-child(2) {
+	color: var(--gray_color);
+}
+
+#notifications > span:first-child i {
 	position: relative;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	color: var(--sidebarMain_backgroundColor) !important;
 }
 
-.title:nth-child(2):hover {
-	cursor: pointer;
+.text:nth-child(2) a {
+	color: var(--gray_color);
 }
-/* /.containerMainLeft */
 
-/* .containerMainRight */
-/* /.containerMainRight */
-/* /.containerMain */
+#search {
+	background-color: white;
+	height: 80%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+#search input {
+	border-style: none;
+	width: 100%;
+}
+
+#search i {
+	margin: 0 1rem;
+}
+
+.contact {
+	margin: 1.5rem 0.5rem;
+}
+
+.contacts .contact.active {
+	background-color: var(--brand-gray);
+}
+
+.avatarImg {
+	width: 25%;
+}
+
+.avatarImg img {
+	border-radius: 50%;
+	width: 75%;
+}
+/* /.sidebarMain */
+/* /.sidebar */
+
+/* .content */
+.content {
+	width: 60%;
+}
+
+/* .contentHeader */
+#imgActiveContact {
+	width: 15%;
+	display: flex;
+}
+
+#imgActiveContact img {
+	width: 65px;
+	height: 65px;
+}
+
+#textActiveContact p {
+	margin: 0;
+	font-size: 13px;
+}
+/* /.contentHeader */
+
+/* .contentMain */
+.contentMain {
+	height: calc(100% - 200px);
+	width: 100%;
+}
+/* /.contentMain */
+
+/* .contentFooter */
+.contentFooter {
+	width: 100%;
+	height: 100px;
+	background-color: var(--contentFooter_backgroundColor);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.inputText {
+	width: calc(100% - 25%);
+}
+
+.inputText input {
+	width: 100%;
+	height: 60px;
+	border-style: none;
+	border-radius: 0.5rem;
+	padding-left: 1rem;
+}
+
+.contentFooter i {
+	line-height: 68px;
+}
+/* /.contentFooter */
+/* /.content */
 
 /**********  
 /.CONTAINER

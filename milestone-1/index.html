@@ -21,114 +21,163 @@
 		<title>Boolzapp</title>
 	</head>
 	<body>
-		<!-- #site_header -->
-		<header id="site_header"></header>
-		<!-- /#site_header -->
+		<!-- #app -->
+		<div id="app">
+			<!-- .container -->
+			<div class="container d-flex mt-3">
+				<!-- sidebar -->
+				<aside class="sidebar d-flex flex-column">
+					<!-- .sidebarHeader -->
+					<div class="sidebarHeader border-end">
+						<div
+							class="row row-cols-2 justify-content-between gx-0"
+							id="rowNameUser"
+						>
+							<div class="col-6">
+								<img
+									id="imgUser"
+									class="rounded-circle"
+									src="./assets/img/avatar_io.jpg"
+									alt="immagine avatar di una ragazza"
+								/>
+								<p class="d-inline fw-bold">Nome utente</p>
+							</div>
+							<div class="col-6 icons">
+								<i class="fas fa-circle-notch"></i>
 
-		<!-- #site_main -->
-		<main id="site_main"></main>
-		<!-- /#site_main -->
+								<i class="fas fa-comment-alt"></i>
 
-		<!-- .container -->
-		<div class="container">
-			<!-- .containerHeader -->
-			<div class="containerHeader h-auto d-flex justify-content-center">
-				<!-- .containerHeaderLeft -->
-				<div class="containerHeaderLeft border-end">
-					<div class="row row-cols-6 ms-1 me-1 gx-0">
-						<div class="col-2">
-							<img
-								class="w-75 rounded-circle"
-								src="./assets/img/avatar_io.jpg"
-								alt="immagine avatar di una ragazza"
-							/>
-						</div>
-						<div class="col-2">
-							<h5>Nome utente</h5>
-						</div>
-						<div class="col-5"></div>
-						<div class="col-1">
-							<i class="fas fa-circle-notch"></i>
-						</div>
-						<div class="col-1">
-							<i class="fas fa-comment-alt"></i>
-						</div>
-						<div class="col-1">
-							<i class="fas fa-ellipsis-v"></i>
-						</div>
-					</div>
-				</div>
-				<!-- /.containerHeaderLeft -->
-
-				<!-- .containerHeaderRight -->
-				<div class="containerHeaderRight">
-					<div class="row row-cols-6 ms-1 me-1 gx-0">
-						<div class="col-1 pe-1">
-							<img
-								class="w-100 rounded-circle"
-								src="./assets/img/avatar_1.jpg"
-								alt="immagine avatar di un ragazzo di nome Michele"
-							/>
-						</div>
-						<div class="col-6">
-							<h6>Michele</h6>
-							<p class="paragraph">
-								Ultimo accesso oggi alle 18 12 2020 <br />08:56:37
-							</p>
-						</div>
-						<div class="col-2"></div>
-						<div class="col-1">
-							<i class="fas fa-search"></i>
-						</div>
-						<div class="col-1">
-							<!-- <i class="fa fa-paperclip" aria-hidden="true"></i> -->
-							<i class="fas fa-paperclip"></i>
-						</div>
-						<div class="col-1">
-							<i class="fas fa-ellipsis-v"></i>
-						</div>
-					</div>
-				</div>
-				<!-- /.containerHeaderRight -->
-			</div>
-			<!-- /.containerHeader -->
-
-			<!-- .containerMain -->
-			<div class="containerMain h-auto d-flex justify-content-center">
-				<!-- .containerMainLeft -->
-				<div class="containerMainLeft">
-					<div class="row row-cols-1 flex-column">
-						<div class="col-12 h-auto d-flex">
-							<span class="rounded-circle border-1 bg-light p-3">
-								<i class="fas fa-bell-slash"></i>
-							</span>
-							<div class="title">
-								<h6>Ricevi notifiche di nuovi messaggi</h6>
-								<h6 class="text-decoration-underline">Attiva notifiche desktop</h6>
+								<i class="fas fa-ellipsis-v"></i>
 							</div>
 						</div>
-						<div class="col-12"></div>
-						<div class="col-12"></div>
-						<div class="col-12"></div>
-						<div class="col-12"></div>
-						<div class="col-12"></div>
 					</div>
-				</div>
-				<!-- /.containerMainLeft -->
+					<!-- /.sidebarHeader -->
 
-				<!-- .containerMainRight -->
-				<div class="containerMainRight">
-					<img
-						class="w-100"
-						src="./assets/img/mine.jpg"
-						alt="immagine di sfondo della chat di WhatsApp"
-					/>
+					<!-- .sidebarMain -->
+					<div class="sidebarMain bg-light">
+						<div class="row row-cols-1 flex-column gx-0">
+							<div class="d-flex" id="notifications">
+								<span class="rounded-circle border-1 bg-light p-3">
+									<i class="fas fa-bell-slash fs-5"></i>
+								</span>
+								<div class="text">
+									<h6>Ricevi notifiche di nuovi messaggi</h6>
+									<a href="#">Attiva notifiche desktop</a>
+								</div>
+							</div>
+							<div class="d-flex p-2 mt-3 m-auto" id="search">
+								<i class="fas fa-search ms-3"></i>
+								<input
+									class="w-50 ms-3"
+									type="text"
+									placeholder="Cerca o inizia una nuova chat"
+								/>
+							</div>
+
+							<div class="contacts">
+								<div
+									v-for="(contact, index) in contacts"
+									class="contact align-center"
+									:class="index === activeContact ? 'active' : 'not-active'"
+								>
+									<div
+										class="
+											avatar
+											d-flex
+											pb-1
+											justify-content-start
+											border-bottom
+										"
+									>
+										<div class="avatarImg">
+											<img
+												:src="'./assets/img/avatar' + contact.avatar + '.jpg'"
+												alt="contact.name + ' avatar image'"
+											/>
+										</div>
+										<div class="avatarText">
+											<div class="d-flex">
+												<p class="fw-bold">{{contact.name}}</p>
+												<p class="time ms-5">{{contact.messages[1].date}}</p>
+											</div>
+											<p class="tex">{{contact.messages[1].text}}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /.sidebarMain -->
+				</aside>
+				<!-- /sidebar -->
+
+				<!-- .content -->
+				<div class="content position-relative">
+					<!-- .contentHeader -->
+					<div class="contentHeader w-100 d-flex">
+						<div
+							class="
+								w-100
+								m-3
+								d-flex
+								justify-content-between
+								align-items-center
+							"
+						>
+							<div class="avatarImg h-100" id="imgActiveContact">
+								<img
+									class=""
+									:src="'./assets/img/avatar' + contacts[activeContact].avatar + '.jpg'"
+									alt="immagine di persona avatar, selezionata attiva"
+								/>
+								<div id="textActiveContact" class="avatarText h-100 ps-3">
+									<p class="fw-bold">{{contacts[activeContact].name}}</p>
+									<p class="time">
+										{{contacts[activeContact].messages[2].date}}
+									</p>
+									<p class="messageText">
+										{{contacts[activeContact].messages[2].text}}
+									</p>
+								</div>
+							</div>
+
+							<div class="icons text-end">
+								<i class="fas fa-search"></i>
+								<i class="fas fa-paperclip"></i>
+								<i class="fas fa-ellipsis-v"></i>
+							</div>
+						</div>
+					</div>
+
+					<!-- .contentMain -->
+					<div class="contentMain d-flex">
+						<img
+							class="w-100 h-100"
+							src="./assets/img/mine.jpg"
+							alt="immagine di sfondo della chat di WhatsApp"
+						/>
+					</div>
+					<!-- /.contentMain -->
+
+					<!-- .contentFooter -->
+					<div class="contentFooter d-flex justify-content-between p-3">
+						<div class="d-flex justify-content-center">
+							<i class="far fa-smile fa-2x fa-fw"></i>
+						</div>
+						<div class="inputText text-center">
+							<input type="text" placeholder="Scrivi un messaggio" />
+						</div>
+						<div class="d-flex justify-content-center">
+							<i class="fas fa-microphone fa-2x fa-fw"></i>
+						</div>
+					</div>
+					<!-- /.contentFooter -->
 				</div>
-				<!-- /.containerMainRight -->
+				<!-- /.content -->
 			</div>
-			<!-- /.containerMain -->
+			<!-- /.container -->
 		</div>
-		<!-- /.container -->
+		<!-- /#app -->
 
 		<!-- script_vuejs_javascript -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>

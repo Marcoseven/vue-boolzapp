@@ -7,6 +7,7 @@
 
 body {
 	height: 100vh;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	background-image: linear-gradient(
 		to bottom,
 		var(--bodyHeader_backgroundColor) 0px,
@@ -49,14 +50,14 @@ body {
 }
 
 /* .sidebarHeader */
-#imgUser {
-	width: 65px;
-	height: 65px;
+#rowNameUser {
+	padding: 0 0.5rem;
+	line-height: 100px;
 }
 
-#rowNameUser {
-	margin: 0 0.5rem;
-	line-height: 90px;
+#imgUser img {
+	width: 65px;
+	height: 65px;
 }
 
 .icons i {
@@ -70,6 +71,7 @@ body {
 /* /.sidebarHeader */
 
 /* .sidebarMain */
+/* #notifications */
 #notifications {
 	height: 80px;
 	background-color: var(--sidebarMain_backgroundColor);
@@ -98,11 +100,12 @@ body {
 .text:nth-child(2) a {
 	color: var(--gray_color);
 }
+/* /#notifications */
 
+/* #search */
 #search {
 	background-color: white;
-	height: 80%;
-	width: 100%;
+	width: 95%;
 	display: flex;
 	align-items: center;
 }
@@ -114,6 +117,12 @@ body {
 
 #search i {
 	margin: 0 1rem;
+}
+/* /#search */
+
+/* .contacts */
+.contacts {
+	overflow-y: scroll;
 }
 
 .contact {
@@ -132,6 +141,20 @@ body {
 	border-radius: 50%;
 	width: 75%;
 }
+
+.contacts .contact:hover {
+	background-color: var(--gray_color);
+	cursor: pointer;
+}
+
+.contacts .contact.active {
+	background-color: var(--activeContact_backgroundColor);
+}
+
+.contacts .contact.active:hover {
+	cursor: pointer;
+}
+/* /.contacts */
 /* /.sidebarMain */
 /* /.sidebar */
 
@@ -142,7 +165,7 @@ body {
 
 /* .contentHeader */
 #imgActiveContact {
-	width: 15%;
+	width: auto;
 	display: flex;
 }
 
@@ -161,6 +184,8 @@ body {
 .contentMain {
 	height: calc(100% - 200px);
 	width: 100%;
+	background-image: url(../img/mine.jpg);
+	overflow-y: scroll;
 }
 /* /.contentMain */
 
@@ -183,11 +208,15 @@ body {
 	height: 60px;
 	border-style: none;
 	border-radius: 0.5rem;
-	padding-left: 1rem;
+	padding: 0 1rem;
 }
 
 .contentFooter i {
 	line-height: 68px;
+}
+
+.contentFooter i:hover {
+	cursor: pointer;
 }
 /* /.contentFooter */
 /* /.content */

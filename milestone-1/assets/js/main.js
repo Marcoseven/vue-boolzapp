@@ -15,6 +15,7 @@ nome e immagine di ogni contatto.
 const app = new Vue({
 	el: "#app",
 	data: {
+		activeContact: 0,
 		contacts: [
 			{
 				name: "Michele",
@@ -100,6 +101,7 @@ const app = new Vue({
 				],
 			},
 		],
-		activeContact: 0,
 	},
 });
+// /Vue.js
+

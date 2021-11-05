@@ -130,16 +130,13 @@ const app = new Vue({
 			/* setTimeout */
 			setTimeout(function () {
 				app.newMsgReceived.date = currentData;
-				app.newMsgReceived.text = "Ok, perfetto";
+				app.newMsgReceived.text = "Ok";
 				app.contacts[app.activeContact].messages.push(app.newMsgReceived);
 			}, 1000);
 			/* /setTimeout */
 		},
 		/* /newMsg */
-
-		/* searchAvatar */
 		searchAvatar() {},
-		/* /searchAvatar */
 	},
 	/* /methods */
 });

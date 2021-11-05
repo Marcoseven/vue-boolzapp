@@ -1,0 +1,273 @@
+/* commonGeneralRules */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	background-image: linear-gradient(
+		to bottom,
+		var(--bodyHeader_backgroundColor) 0px,
+		var(--bodyHeader_backgroundColor) 116px,
+		var(--bodyMain_backgroundColor) 100px,
+		var(--bodyMain_backgroundColor) 100%
+	);
+}
+/* /commonGeneralRules */
+
+/* utility */
+:root {
+	--bodyHeader_backgroundColor: #009688;
+	--bodyMain_backgroundColor: #dadbd4;
+	--contentHeader_backgroundColor: #eaeaea;
+	--sidebarMain_backgroundColor: #8edafc;
+	--sidebarMainTwo_backgroundColor: #fafafa;
+	--activeContact_backgroundColor: #e9ebeb;
+	--gray_color: gray;
+	--msgSent_backgroundColor: #d5f9ba;
+	--msgReceived_backgroundColor: #fff;
+	--contentFooter_backgroundColor: #f3eeea;
+}
+/* /utility */
+
+/**********  
+.CONTAINER
+**********/
+
+.sidebarHeader,
+.contentHeader {
+	height: 100px;
+	background-color: var(--contentHeader_backgroundColor);
+}
+
+.container i {
+	color: var(--gray_color);
+}
+
+/* .sidebar */
+.sidebar {
+	width: 40%;
+}
+
+/* .sidebarHeader */
+#rowNameUser {
+	padding: 0 0.5rem;
+	line-height: 100px;
+}
+
+#imgUser img {
+	width: 65px;
+	height: 65px;
+}
+
+.icons i {
+	padding: 0 1rem;
+	font-size: 25px;
+}
+
+.icons i:hover {
+	cursor: pointer;
+}
+/* /.sidebarHeader */
+
+/* .sidebarMain */
+/* #notifications */
+#notifications {
+	height: 80px;
+	background-color: var(--sidebarMain_backgroundColor);
+}
+
+#notifications:first-child span {
+	margin: 0.5rem 1rem;
+}
+
+.text {
+	margin: 1rem 0;
+}
+
+.text h6:nth-child(2) {
+	color: var(--gray_color);
+}
+
+#notifications > span:first-child i {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--sidebarMain_backgroundColor) !important;
+}
+
+.text:nth-child(2) a {
+	color: var(--gray_color);
+}
+/* /#notifications */
+
+/* #search */
+#search {
+	background-color: white;
+	width: 95%;
+	display: flex;
+	align-items: center;
+	margin: 0.5rem auto;
+	padding: 0.5rem;
+}
+
+#search input {
+	border-style: none;
+	width: 100%;
+}
+
+#search i {
+	margin: 0 1rem;
+}
+/* /#search */
+
+/* .contacts */
+.contacts{
+	overflow-y: scroll;
+}
+.contact {
+	margin: 1.5rem 0.5rem;
+}
+
+.contacts .contact.active {
+	background-color: var(--brand-gray);
+}
+
+.avatarImg {
+	width: 25%;
+}
+
+.avatarImg img {
+	border-radius: 50%;
+	width: 75%;
+}
+
+.contacts .contact:hover {
+	background-color: var(--gray_color);
+	cursor: pointer;
+}
+
+.contacts .contact.active {
+	background-color: var(--activeContact_backgroundColor);
+}
+
+.contacts .contact.active:hover {
+	cursor: pointer;
+}
+/* /.contacts */
+/* /.sidebarMain */
+/* /.sidebar */
+
+/* .content */
+.content {
+	width: 60%;
+}
+
+/* .contentHeader */
+#imgActiveContact {
+	width: auto;
+	display: flex;
+}
+
+#imgActiveContact img {
+	width: 65px;
+	height: 65px;
+}
+
+#textActiveContact p {
+	margin: 0;
+	font-size: 13px;
+}
+
+#iconsContentHeader {
+	width: auto;
+}
+/* /.contentHeader */
+
+/* .contentMain */
+.contentMain {
+	height: calc(100% - 200px);
+	width: 100%;
+	background-image: url(../img/mine.jpg);
+	overflow-y: scroll;
+}
+
+.messages {
+	display: flex;
+	flex-direction: column;
+}
+
+.msg {
+	width: 300px;
+	text-align: left;
+	position: relative;
+}
+
+.msgText {
+	display: flex;
+	justify-content: center;
+}
+
+.msgDate {
+	font-size: 10px;
+	text-align: end;
+	margin: 0 0.5rem;
+}
+
+.msg.sent {
+	align-self: flex-end;
+	background-color: var(--msgSent_backgroundColor);
+}
+
+.msg.received {
+	align-self: flex-start;
+	background-color: var(--msgReceived_backgroundColor);
+}
+
+.msg.sent,
+.msg.received {
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 1rem;
+}
+/* /.contentMain */
+
+/* .contentFooter */
+.contentFooter {
+	width: 100%;
+	height: 100px;
+	background-color: var(--contentFooter_backgroundColor);
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.inputText {
+	width: calc(100% - 25%);
+}
+
+.inputText input {
+	width: 100%;
+	height: 60px;
+	border-style: none;
+	border-radius: 0.5rem;
+	padding: 0 1rem;
+}
+
+.contentFooter i {
+	line-height: 68px;
+}
+
+.contentFooter i:hover {
+	cursor: pointer;
+}
+/* /.contentFooter */
+/* /.content */
+
+/**********  
+/.CONTAINER
+**********/
